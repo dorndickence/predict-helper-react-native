@@ -1,13 +1,19 @@
 {
   "expo": {
-    "name": "pr-helper-react-native",
-    "slug": "pr-helper-react-native",
+    "name": "Predict helper",
+    "slug": "predict-helper",
+    "owner": "TakhirKudusov",
+    "privacy": "hidden",
     "version": "1.0.0",
+    "githubUrl": "https://github.com/TakhirKudusov/predict-helper-react-native.git",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/icons/icon.png",
+    "notification": {
+      "icon": ""
+    },
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/icons/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,12 +25,17 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icons/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/icons/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "scheme": "app-scheme"
   }
 }

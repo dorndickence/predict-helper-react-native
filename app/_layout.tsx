@@ -1,39 +1,61 @@
 import { Drawer } from "expo-router/drawer";
-import Header from "./_lib/components/Header";
+import Header from "./_lib/components/drawer/Header";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import DrawerContent from "./_lib/components/DrawerContent";
-import { useFonts } from "expo-font";
-import { useCallback } from "react";
+import DrawerContent from "./_lib/components/drawer/DrawerContent";
+import * as Font from "expo-font";
+import { useCallback, useEffect, useState } from "react";
 import { SplashScreen } from "expo-router";
+import { Dimensions } from "react-native";
+import { StatusBar } from "expo-status-bar";
+
+SplashScreen.preventAutoHideAsync();
 
 const Layout = () => {
-  const [fontsLoaded] = useFonts({
-    Montserrat: require("../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf"),
-  });
+  const [appIsReady, setAppIsReady] = useState(false);
 
-  const onLayoutRootView = useCallback(() => {
-    if (fontsLoaded) {
+  useEffect(() => {
+    const prepare = async () => {
+      try {
+        await Font.loadAsync({
+          "Montserrat ExtraBold": require("../assets/fonts/Montserrat/static/Montserrat-ExtraBold.ttf"),
+          "Montserrat Regular": require("../assets/fonts/Montserrat/static/Montserrat-Regular.ttf"),
+        });
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+      } catch (e) {
+        console.warn(e);
+      } finally {
+        setAppIsReady(true);
+      }
+    };
+
+    prepare();
+  }, []);
+
+  useEffect(() => {
+    if (appIsReady) {
       SplashScreen.hideAsync();
     }
-  }, [fontsLoaded]);
+  }, [appIsReady]);
 
-  if (!fontsLoaded) {
-    return null;
-  }
-
-  return (
+  return appIsReady ? (
     <SafeAreaProvider>
+      <StatusBar style="dark" />
       <Drawer
         screenOptions={{
           header: Header,
           drawerActiveTintColor: "#FFF",
           drawerActiveBackgroundColor: "#2C1C1C",
           drawerInactiveTintColor: "#FFF",
+          drawerHideStatusBarOnOpen: true,
+          overlayColor: "transparent",
+          drawerStyle: {
+            width: Dimensions.get("window").width - 100,
+          },
         }}
         drawerContent={DrawerContent}
       />
     </SafeAreaProvider>
-  );
+  ) : null;
 };
 
 export default Layout;

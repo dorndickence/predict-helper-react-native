@@ -15,7 +15,7 @@ const AllLastRounds = () => {
         ))}
       </View>
       <A
-        href="https://games.arkana-gaming.com/"
+        href="https://games.arkana-gaming.com/games/crash"
         style={styles.linkButtonWrapper}
       >
         <ButtonComponent title="play now" />

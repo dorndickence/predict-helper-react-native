@@ -67,7 +67,7 @@ const AboutGame = () => {
             </View>
           </View>
           <A
-            href="https://games.arkana-gaming.com/"
+            href="https://games.arkana-gaming.com/games/crash"
             style={styles.linkButtonWrapper}
           >
             <ButtonComponent title="play now" />
@@ -80,10 +80,6 @@ const AboutGame = () => {
 };
 
 const styles = StyleSheet.create({
-  contentWrapper: {
-    display: "flex",
-    alignItems: "center",
-  },
   contentContainer: {
     display: "flex",
     alignItems: "center",

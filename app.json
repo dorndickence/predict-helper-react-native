@@ -1,8 +1,8 @@
 {
   "expo": {
     "name": "Predict helper",
-    "slug": "predict-helper",
-    "owner": "TakhirKudusov",
+    "slug": "aviator-predict-helper",
+    "owner": "kudusovtakhir",
     "privacy": "hidden",
     "version": "1.0.0",
     "githubUrl": "https://github.com/TakhirKudusov/predict-helper-react-native.git",
@@ -21,13 +21,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kudusovtakhir.aviatorpredicthelper"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/icons/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.kudusovtakhir.aviatorpredicthelper"
     },
     "web": {
       "favicon": "./assets/icons/favicon.png",
@@ -36,6 +38,14 @@
     "plugins": [
       "expo-router"
     ],
-    "scheme": "app-scheme"
+    "scheme": "app-scheme",
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "9c6cbfa4-0832-454c-a467-a231ead9de44"
+      }
+    }
   }
 }

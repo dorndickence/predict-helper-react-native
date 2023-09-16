@@ -1,11 +1,8 @@
 import { FC } from "react";
 import { StyleSheet, Text } from "react-native";
+import { TTitleProps } from "../../utils/types/TTitleProps";
 
-type Props = {
-  title: string;
-};
-
-const LargeHeader: FC<Props> = ({ title }) => {
+const LargeHeader: FC<TTitleProps> = ({ title }) => {
   return <Text style={styles.header}>{title}</Text>;
 };
 

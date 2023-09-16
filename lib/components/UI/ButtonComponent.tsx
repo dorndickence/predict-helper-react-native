@@ -1,11 +1,8 @@
 import { FC } from "react";
 import { Text, StyleSheet, TouchableOpacity } from "react-native";
+import { TTitleProps } from "../../utils/types/TTitleProps";
 
-type Props = {
-  title: string;
-};
-
-const ButtonComponent: FC<Props> = ({ title }) => {
+const ButtonComponent: FC<TTitleProps> = ({ title }) => {
   return (
     <TouchableOpacity accessibilityLabel={title} style={styles.button}>
       <Text style={styles.buttonText}>{title}</Text>

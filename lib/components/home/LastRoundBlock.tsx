@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   },
   dateText: {
     color: "#818181",
-    fontFamily: "Montserrat Regular",
+    fontFamily: "Montserrat Light",
     fontSize: 14,
     letterSpacing: 1,
     marginTop: 5,

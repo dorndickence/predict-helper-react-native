@@ -11,12 +11,12 @@ const IndexBlock = () => {
         <Image
           resizeMode="contain"
           style={styles.diagramImage}
-          source={require("../../../../assets/images/indicator.png")}
+          source={require("../../../assets/images/indicator.png")}
         />
         <View style={styles.arrowImageContainer}>
           <Image
             resizeMode="contain"
-            source={require("../../../../assets/images/arrow.png")}
+            source={require("../../../assets/images/arrow.png")}
             style={styles.arrowImage}
           />
         </View>

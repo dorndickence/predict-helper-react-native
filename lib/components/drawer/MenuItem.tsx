@@ -3,14 +3,7 @@ import { TItemData } from "../../utils/types/TItemData";
 import { ListRenderItem, Pressable, StyleSheet, Text } from "react-native";
 import { Link } from "expo-router";
 
-type Props = {
-  navigation: DrawerNavigationHelpers;
-  selectedId: string | null;
-};
-
-const MenuItem: ListRenderItem<TItemData> = ({
-  item: { title, id, route },
-}) => {
+const MenuItem: ListRenderItem<TItemData> = ({ item: { title, route } }) => {
   return (
     <Link href={route} style={styles.link}>
       <Text style={styles.linkText}>{title}</Text>

@@ -1,7 +1,7 @@
-import { Text } from "react-native";
+import PageWrapper from "../../lib/components/UI/PageWrapper";
 
 const AboutApp = () => {
-  return <Text>About App</Text>;
+  return <PageWrapper></PageWrapper>;
 };
 
 export default AboutApp;

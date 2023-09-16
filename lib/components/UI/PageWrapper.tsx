@@ -1,18 +1,11 @@
 import { FC, PropsWithChildren } from "react";
-import {
-  Dimensions,
-  ImageBackground,
-  SafeAreaView,
-  StyleSheet,
-  View,
-} from "react-native";
-import { StatusBar } from "expo-status-bar";
+import { Dimensions, ImageBackground, StyleSheet } from "react-native";
 
 const PageWrapper: FC<PropsWithChildren> = ({ children }) => {
   return (
     <ImageBackground
       style={styles.image}
-      source={require("../../../../assets/images/bg.png")}
+      source={require("../../../assets/images/bg.png")}
     >
       {children}
     </ImageBackground>

@@ -1,9 +1,9 @@
-import PageWrapper from "../_lib/components/UI/PageWrapper";
+import PageWrapper from "../../lib/components/UI/PageWrapper";
 import { ScrollView, StyleSheet, View } from "react-native";
-import IndexBlock from "../_lib/components/home/IndexBlock";
-import LastRoundBlock from "../_lib/components/home/LastRoundBlock";
-import Footer from "../_lib/components/UI/Footer";
-import AllLastRounds from "../_lib/components/home/AllLastRounds";
+import IndexBlock from "../../lib/components/home/IndexBlock";
+import LastRoundBlock from "../../lib/components/home/LastRoundBlock";
+import Footer from "../../lib/components/UI/Footer";
+import AllLastRounds from "../../lib/components/home/AllLastRounds";
 
 const Home = () => {
   return (

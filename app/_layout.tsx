@@ -1,7 +1,7 @@
 import { Drawer } from "expo-router/drawer";
-import Header from "./_lib/components/drawer/Header";
+import Header from "../lib/components/drawer/Header";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import DrawerContent from "./_lib/components/drawer/DrawerContent";
+import DrawerContent from "../lib/components/drawer/DrawerContent";
 import * as Font from "expo-font";
 import { useCallback, useEffect, useState } from "react";
 import { SplashScreen } from "expo-router";
@@ -18,7 +18,7 @@ const Layout = () => {
       try {
         await Font.loadAsync({
           "Montserrat ExtraBold": require("../assets/fonts/Montserrat/static/Montserrat-ExtraBold.ttf"),
-          "Montserrat Regular": require("../assets/fonts/Montserrat/static/Montserrat-Regular.ttf"),
+          "Montserrat Light": require("../assets/fonts/Montserrat/static/Montserrat-Light.ttf"),
         });
         await new Promise((resolve) => setTimeout(resolve, 2000));
       } catch (e) {

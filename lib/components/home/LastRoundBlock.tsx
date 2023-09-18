@@ -1,13 +1,18 @@
 import { StyleSheet, View, Text } from "react-native";
 import LargeHeader from "../UI/LargeHeader";
+import { TGamesStatisticsData } from "../../utils/types/TStatisticsData";
+import { FC } from "react";
 
-const LastRoundBlock = () => {
+type Props = TGamesStatisticsData["data"]["Data"]["lastRoundData"];
+
+const LastRoundBlock: FC<Props> = ({ coefficient, date }) => {
   return (
     <View style={styles.container}>
       <LargeHeader title="last round" />
-      <Text style={styles.dateText}>11.09.23 17:05</Text>
+      {/*<Text style={styles.dateText}>11.09.23 17:05</Text>*/}
+      <Text style={styles.dateText}>{date}</Text>
       <View style={styles.lastRoundCoeffBadge}>
-        <Text style={styles.lastCoeffText}>1,88</Text>
+        <Text style={styles.lastCoeffText}>{coefficient}</Text>
       </View>
     </View>
   );

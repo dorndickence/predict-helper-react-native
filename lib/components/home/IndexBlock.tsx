@@ -2,8 +2,12 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import { A } from "@expo/html-elements";
 import ButtonComponent from "../UI/ButtonComponent";
 import LargeHeader from "../UI/LargeHeader";
+import { FC } from "react";
+import { TGamesStatisticsData } from "../../utils/types/TStatisticsData";
 
-const IndexBlock = () => {
+type Props = Pick<TGamesStatisticsData["data"]["Data"], "index">;
+
+const IndexBlock: FC<Props> = ({ index }) => {
   return (
     <View style={styles.container}>
       <LargeHeader title="play or not index" />
@@ -13,7 +17,12 @@ const IndexBlock = () => {
           style={styles.diagramImage}
           source={require("../../../assets/images/indicator.png")}
         />
-        <View style={styles.arrowImageContainer}>
+        <View
+          style={{
+            ...styles.arrowImageContainer,
+            transform: [{ rotate: `${index}deg` }],
+          }}
+        >
           <Image
             resizeMode="contain"
             source={require("../../../assets/images/arrow.png")}
@@ -52,7 +61,7 @@ const styles = StyleSheet.create({
     width: 19,
     position: "relative",
     bottom: 115,
-    transform: "rotate(75deg)",
+    // transform: "rotate(35.45deg)",
   },
   arrowImage: {
     maxHeight: 115,

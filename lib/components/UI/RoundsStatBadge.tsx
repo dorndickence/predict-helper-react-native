@@ -1,12 +1,12 @@
-import { TRoundsStat } from "../../utils/types/TRoundsStat";
 import { FC } from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { TGamesStatisticsData } from "../../utils/types/TStatisticsData";
 
-type Props = {
-  item: TRoundsStat;
+type Props = TGamesStatisticsData["data"]["Data"]["statisticsData"]["100+"] & {
+  indicator: string;
 };
 
-const RoundsStatBadge: FC<Props> = ({ item: { indicator, count, color } }) => {
+const RoundsStatBadge: FC<Props> = ({ count, color, indicator }) => {
   return (
     <View style={styles.container}>
       <Text style={{ ...styles.title, color }}>{indicator}</Text>

@@ -16,7 +16,7 @@ const Home = () => {
   useEffect(() => {
     axios
       .get<undefined, TGamesStatisticsData>(
-        "http://192.168.0.102:8010/crash_game/get_games_statistics",
+        "https://games.arkana-gaming.com/api/crash_game/get_games_statistics",
       )
       .then(({ data }) => setRoundsData(data.Data))
       .catch(console.error);
